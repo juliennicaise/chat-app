@@ -1,6 +1,8 @@
 import React from 'react';
 import logo from './logo.svg';
 import './App.css';
+import Fiche from './components/Contact.js';
+
 
 function App() {
   return (
@@ -18,7 +20,9 @@ function App() {
         >
           Learn React
         </a>
+        <Fiche />
       </header>
+      
     </div>
   );
 }
