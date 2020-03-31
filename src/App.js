@@ -20,7 +20,9 @@ function App() {
         >
           Learn React
         </a>
-        <Fiche />
+        <Fiche name='Judith Pierce' avatar="https://randomuser.me/api/portraits/women/42.jpg" online = 'online'  />
+        <Fiche name='Dan Hoffman' avatar="https://randomuser.me/api/portraits/men/87.jpg" online = 'offline' />
+        <Fiche name='Victor Lowe' avatar="https://randomuser.me/api/portraits/men/50.jpg" online = 'online' />
       </header>
       
     </div>
