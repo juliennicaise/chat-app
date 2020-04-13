@@ -38,7 +38,7 @@ const users = [
 
 const UsersList = () => 
   users.map(props => (
-    <Contact name={props.name} avatar={props.avatar} online={props.online} />
+    <Fiche name={props.name} avatar={props.avatar} online={props.online} />
   ));
 
 export default UsersList

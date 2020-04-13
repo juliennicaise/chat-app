@@ -1,25 +1,49 @@
-import React from 'react'
-import './Contact.css'
-import PropTypes from 'prop-types'
+import React from "react";
+import "./Contact.css";
 
-
-const Fiche = props => (
-  <div className="Contact">
-    <img className="avatar" src={props.avatar}></img>
-    <div className='status'>
-        <div>
-            <h4 className='name'> {props.name} </h4>
-            <div className={props.online === 'online' ? 'status-online' : 'status-offline'}></div>  
-            <p className='status-text'> {props.online === 'online' ? 'online' : 'offline'} </p>
-      </div>
-    </div>
-  </div>);
-
-  Fiche.propTypes = {
-      name : PropTypes.string,
-      online : PropTypes.string,
-      avatar : PropTypes.string,
+class Contact extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      online: this.props.online
+    };
   }
 
-  export default Fiche
+
+  render() {
+
+    return (
+
+      <div className="Contact">
+        <img src={this.props.avatar} className="avatar" alt="" />
+        <div>
+          <h4 className="name"> {this.props.name} </h4>
+          <div className="status">
+            <div
+              onClick={event => {
+                const newStatus = !this.state.online;
+                this.setState({ online: newStatus });
+              }}
+            >
+              
+              {this.state.online ? (
+                <div className="status-online" />
+              ) : (
+                <div className="status-offline" />
+              )}
+              {this.state.online ? (
+                <div className="status-text">online </div>
+              ) : (
+                <div className="status-text">offline </div>
+              )}
+
+            </div>
+          </div>
+        </div>
+      </div>
+    );
+  }
+}
+
+export default Contact;
 
